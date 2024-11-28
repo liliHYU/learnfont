@@ -29,9 +29,10 @@ export default defineConfig({
     vue(),
   ],
   server: {
+    open: false, 
     proxy: {
       '/api': {
-        target: 'http://localhost:8087',
+        target: '/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
